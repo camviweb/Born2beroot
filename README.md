@@ -20,7 +20,6 @@ Le systeme de securite Linux qui permet le controle d'acces obligatoire (ou Mand
 ### LVM ?
 Logiciel de gestion par volumes logiques (ou Logical Volume Manager) qui permet de manipuler facilement les partitions.   
   
-- creer au minimum 2 partitions chiffrees en utilisant LVM
 - pour Debian, apt-get as package manager
 
 ### Difference entre Aptitude et APT (Advanced Packaging Tool) ? 
@@ -32,7 +31,7 @@ Logiciel de gestion par volumes logiques (ou Logical Volume Manager) qui permet 
 # Steps
 - [x] download my virtual machine
 - [x] install my virtual machine
-- [ ] start my virtual machine
+- [x] access my virtual machine (creer au minimum 2 partitions chiffrees en utilisant LVM)
 - [ ] configure my virtual machine
 - [ ] connect to SSH
 - [ ] continue configurating my virtual machine
