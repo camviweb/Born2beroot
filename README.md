@@ -15,7 +15,7 @@ Un logiciel, au lieu d'un ordinateur physique, pour executer des programmes et d
 
 ### AppArmor ?
 - **AppArmor** doit rester actif
-Le systeme de securite Linux qui permet le controle d'acces obligatoire (ou Mandatory Access Control) : il restreint les actions des processus. Inclus par default sur Debian. Verifier s'il est actif avec : aa-status
+- Le systeme de securite Linux qui permet le controle d'acces obligatoire (ou Mandatory Access Control) : il restreint les actions des processus. Inclus par default sur Debian. Verifier s'il est actif avec : aa-status
 
 ### LVM ?
 Logiciel de gestion par volumes logiques (ou Logical Volume Manager) qui permet de manipuler facilement les partitions.   
