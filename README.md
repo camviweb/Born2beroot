@@ -9,12 +9,6 @@ Keywords :
 ### Machine virtuelle ?
 Un logiciel, au lieu d'un ordinateur physique, pour exécuter des programmes et des applications. Chaque machine virtuelle a son propre système d'exploitation et fonctionne séparemment, donc on peut avoir plusieurs machines virtuelles sur une machine. 
 
-### KDump ?
-- [ ] mise en place de KDump
-
-### SELinux
-- [ ] SELinux doit rester actif et sa configuration doit être adaptée au sujet
-
 ### AppArmor ?
 - [x] AppArmor doit rester actif -> aa-status
 - Le système de sécurité Linux qui permet le contrôle d'accès obligatoire (ou Mandatory Access Control) : il restreint les actions des processus. Inclus par défault sur Debian.
@@ -49,9 +43,43 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 - [x] La règle suivante ne s’applique pas à l’utilisateur root : le mot de passe devra comporter au moins 7 caractères qui ne sont pas présents dans l’ancien mot de passe.
 - [x] votre mot de passe root devra suivre cette politique
 - [x] il faudra changer tous les mots de passe des comptes présents sur la machine virtuelle, compte root inclus.
-(canguyen : Born2beroot! root : Helloworld2025 canguyen42 : Born2beroot)
+- (canguyen : Born2beroot! root : Helloworld2025 canguyen42 : Born2beroot)
 
-### Commandes 
+## Groupes
+- [x] Un utilisateur sera présent avec pour nom votre login en plus de l’utilisateur root.
+- [ ] Cet utilisateur appartiendra aux groupes user42 et sudo.
+
+### Sudo
+- [x] L’authentification en utilisant sudo sera limitée à 3 essais en cas de mot de passe erroné.
+- [x] Un message de votre choix s’affichera en cas d’erreur suite à un mauvais mot de passe lors de l’utilisation de sudo.
+- [x] Chaque action utilisant sudo sera archivée, aussi bien les inputs que les outputs.
+- [x] Le journal se trouvera dans le dossier /var/log/sudo/.
+- [x] Le mode TTY sera activé pour des questions de sécurité.
+- [x] Les paths utilisables par sudo seront restreints, pour des questions de sécurité. Exemple : /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+
+### script avec cron
+- Cron ou cron job est un utilitaire de ligne de commande pour planifier des commandes ou des scripts à des intervalles spécifiques ou à une heure précise chaque jour. Utile si vous souhaitez configurer votre serveur pour qu'il redémarre à une heure précise chaque jour.
+- [ ] Dès le lancement de votre serveur, le script écrira des informations toutes les 10 minutes sur tous les terminaux (jetez un oeil du côté de wall). La bannière est facultative.
+- [ ] À aucun moment la moindre erreur ne doit être visible.
+- [x] L’architecture de votre système d’exploitation ainsi que sa version de kernel.
+- [x] Le nombre de processeurs physiques.
+- [x] Le nombre de processeurs virtuels.
+- [x] La mémoire vive disponible actuelle sur votre serveur ainsi que son taux d’utilisation sous forme de pourcentage.
+- [x] La mémoire disponible actuelle sur votre serveur ainsi que son taux d’utilisation sous forme de pourcentage.
+- [x] Le taux d’utilisation actuel de vos processeurs sous forme de pourcentage.
+- [x] La date et l’heure du dernier redémarrage.
+- [x] Si LVM est actif ou pas.
+- [x] Le nombre de connexions actives.
+- [x] Le nombre d’utilisateurs utilisant le serveur.
+- [x] L’adresse IPv4 de votre serveur, ainsi que son adresse MAC (Media Access Control).
+- [x] Le nombre de commande executées avec le programme sudo.
+- [ ] expliquer le fonctionnement de ce script
+- [x] interrompre son exécution sans le modifier
+- `cd /usr/local/bin` – pour montrer monitoring.sh
+- `sudo crontab -u root -e` – pour editer le cron job
+- `change script to */1 * * * * sleep 30s && script path` – to run it every 30 seconds, delete the line to stop the job from running.
+
+### Commandes
 - sudo ufw status
 - sudo systemctl status ssh
 - getent group sudo
@@ -64,7 +92,7 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 - hostnamectl set-hostname new_hostname - pour changer le nom d'hote actuel puis -> redemarrer la machine virtuelle avec sudo reboot
 - sudo nano /etc/hosts - change current hostname to new hostname
 - lsblk - pour afficher les partitions
-- dpkg -l | grep sudo – to show that sudo is installed
+- dpkg -l | grep sudo – pour montrer que sudo est installe 
 - sudo ufw status numbered
 - sudo ufw allow port-id
 - sudo ufw delete rule number
@@ -76,5 +104,5 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 - [x] access my virtual machine (créer au minimum 2 partitions chiffrées en utilisant LVM)
 - [x] configure my virtual machine
 - [x] connect to SSH
-- [ ] continue configurating my virtual machine
+- [x] continue configurating my virtual machine
 - [ ] submission
