@@ -75,7 +75,7 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 
 ### Commandes
 - sudo chage -l canguyen pour verifier les regles d'expiration des mots de passe
-- lsb_release -a || cat /etc/os-release
+- uname --kernel-version
 - getent group groupname
 - sudo adduser new_username
 - sudo groupadd groupname
