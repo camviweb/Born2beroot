@@ -1,5 +1,5 @@
 # Projet en cours 
-Keywords : 
+### Keywords
 - virtualisation
 - administration système
 
@@ -23,13 +23,13 @@ Logiciel de gestion par volumes logiques (ou Logical Volume Manager) qui permet 
 ### SSH ?
 Secure Shell Host est un mécanisme d'authentification entre un client et un hôte. Il utilise des techniques de cryptage pour que toute communication entre clients et hôtes soit faite sous forme cryptée. Un utilisateur sur Mac ou Linux peut utiliser SSH le terminal pour travailler sur son serveur via SSH.  
 - [x] Un service SSH sera actif sur le port 4242 dans votre machine virtuelle.
-- [ ] Pour des questions de sécurité, on ne devra pas pouvoir se connecter par SSH avec l’utilisateur root.
-- [ ] L’utilisation de SSH sera testée durant la soutenance par la mise en place d’un nouveau compte.
+- [x] Pour des questions de sécurité, on ne devra pas pouvoir se connecter par SSH avec l’utilisateur root.
+- [x] L’utilisation de SSH sera testée durant la soutenance par la mise en place d’un nouveau compte.
 
 ### UFW ?
 - Uncomplicated Firewall est une interface pour modifier le pare-feu de l'appareil sans compromettre la sécurité. Elle permet de configurer les ports auxquels autoriser les connexions et les ports à fermer. C'est utile en avec SSH car on peut définir un port spécifique avec lequel fonctionner.
 - [x] configurer votre système d’exploitation avec le pare-feu UFW et ne laisser ouvert **que** le port 4242 dans votre machine virtuelle.
-- [ ] Votre pare-feu devra être actif au lancement de votre machine virtuelle. 
+- [x] Votre pare-feu devra être actif au lancement de votre machine virtuelle. 
 
 ### Politique de mot de passe fort
 - Nous utilisons la bibliothèque de vérification de la qualité des mots de passe et il existe 2 fichiers : common-password qui définit les règles telles que les caractères majuscules et minuscules, les caractères en double, etc. et le fichier login.defs qui stocke les règles d'expiration des mots de passe (30 jours, etc.).
@@ -47,7 +47,7 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 
 ## Groupes
 - [x] Un utilisateur sera présent avec pour nom votre login en plus de l’utilisateur root.
-- [ ] Cet utilisateur appartiendra aux groupes user42 et sudo.
+- [x] Cet utilisateur appartiendra aux groupes user42 et sudo.
 
 ### Sudo
 - [x] L’authentification en utilisant sudo sera limitée à 3 essais en cas de mot de passe erroné.
