@@ -114,5 +114,5 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 - [x] access my virtual machine (créer au minimum 2 partitions chiffrées en utilisant LVM)
 - [x] configure my virtual machine
 - [x] connect to SSH
-- [x] continue configurating mcanguy virtual machine
+- [x] continue configurating my virtual machine
 - [x] submission
