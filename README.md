@@ -33,8 +33,6 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 
 ### Politique de mot de passe fort
 - Nous utilisons la bibliothèque de vérification de la qualité des mots de passe et il existe 2 fichiers : common-password qui définit les règles telles que les caractères majuscules et minuscules, les caractères en double, etc. et le fichier login.defs qui stocke les règles d'expiration des mots de passe (30 jours, etc.).
-- sudo nano /etc/login.defs
-- sudo nano /etc/pam.d/common-password
 - [x] votre mot de passe doit expirer tous les 30 jours
 - [x] Le nombre minimum de jours avant de pouvoir modifier un mot de passe sera configuré à 2.
 - [x] L’utilisateur devra recevoir un avertissement 7 jours avant que son mot de passe n’expire.
@@ -59,8 +57,7 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 
 ### script avec cron
 - Cron ou cron job est un utilitaire de ligne de commande pour planifier des commandes ou des scripts à des intervalles spécifiques ou à une heure précise chaque jour. Utile si vous souhaitez configurer votre serveur pour qu'il redémarre à une heure précise chaque jour.
-- [ ] Dès le lancement de votre serveur, le script écrira des informations toutes les 10 minutes sur tous les terminaux (jetez un oeil du côté de wall). La bannière est facultative.
-- [ ] À aucun moment la moindre erreur ne doit être visible.
+- [x] Dès le lancement de votre serveur, le script écrira des informations toutes les 10 minutes sur tous les terminaux (jetez un oeil du côté de wall). La bannière est facultative.
 - [x] L’architecture de votre système d’exploitation ainsi que sa version de kernel.
 - [x] Le nombre de processeurs physiques.
 - [x] Le nombre de processeurs virtuels.
@@ -73,30 +70,39 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 - [x] Le nombre d’utilisateurs utilisant le serveur.
 - [x] L’adresse IPv4 de votre serveur, ainsi que son adresse MAC (Media Access Control).
 - [x] Le nombre de commande executées avec le programme sudo.
-- [ ] expliquer le fonctionnement de ce script
+- [x] expliquer le fonctionnement de ce script
 - [x] interrompre son exécution sans le modifier
-- `cd /usr/local/bin` – pour montrer monitoring.sh
-- `sudo crontab -u root -e` – pour editer le cron job
-- `change script to */1 * * * * sleep 30s && script path` – to run it every 30 seconds, delete the line to stop the job from running.
 
 ### Commandes
-- sudo ufw status
-- sudo systemctl status ssh
-- getent group sudo
-- getent group user42
-- sudo adduser new username
+- sudo chage -l canguyen pour verifier les regles d'expiration des mots de passe
+- lsb_release -a || cat /etc/os-release
+- getent group groupname
+- sudo adduser new_username
 - sudo groupadd groupname
 - sudo usermod -aG groupname username
-- sudo chage -l username - pour verifier les regles d'expiration des mots de passe
+- sudo nano /etc/login.defs
+- sudo nano /etc/pam.d/common-password
 - hostnamectl
-- hostnamectl set-hostname new_hostname - pour changer le nom d'hote actuel puis -> redemarrer la machine virtuelle avec sudo reboot
+- sudo hostnamectl set-hostname new_hostname - pour changer le nom d'hote actuel puis -> redemarrer la machine virtuelle avec sudo reboot
 - sudo nano /etc/hosts - change current hostname to new hostname
 - lsblk - pour afficher les partitions
-- dpkg -l | grep sudo – pour montrer que sudo est installe 
+- dpkg -l | grep sudo – pour montrer que sudo est installe
+- sudo visudo ls
+- sudo nano /etc/sudoers
+- cd ~/../../var/log && nano sudo.log
+- sudo ufw status
 - sudo ufw status numbered
 - sudo ufw allow port-id
-- sudo ufw delete rule number
+- sudo ufw delete rulenumber
+- sudo service ssh status
+- sudo systemctl status ssh
 - ssh your_user_id@192.168.122.1 -p 4242 - dans un terminal pour montrer que SSH sur le port 4242 fonctionne
+- cd /usr/local/bin && vim monitoring.sh
+- sudo crontab -u root -e – pour editer le cron job
+- change 10 value to */1 * * * *
+- (sleep 30s – to run it every 30 seconds, delete the line to stop the job from running)
+- sudo cronstop && sudo reboot 
+- sudo cronstart 
 
 # Steps
 - [x] download my virtual machine
@@ -105,4 +111,4 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 - [x] configure my virtual machine
 - [x] connect to SSH
 - [x] continue configurating my virtual machine
-- [ ] submission
+- [x] submission
