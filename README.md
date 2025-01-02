@@ -4,7 +4,9 @@
 - administration système
 
 ### Pourquoi Debian ?
-"L'utilisation de Debian est fortement conseillée pour quelqu'un débutant dans ce domaine."
+- "L'utilisation de Debian est fortement conseillée pour quelqu'un débutant dans ce domaine."
+- Plus simple a installer et configurer donc mieux pour un server personnel.
+- Plus facile a mettre a jour.
 
 ### Machine virtuelle ?
 Un logiciel, au lieu d'un ordinateur physique, pour exécuter des programmes et des applications. Chaque machine virtuelle a son propre système d'exploitation et fonctionne séparemment, donc on peut avoir plusieurs machines virtuelles sur une machine. 
@@ -42,12 +44,14 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 - [x] votre mot de passe root devra suivre cette politique
 - [x] il faudra changer tous les mots de passe des comptes présents sur la machine virtuelle, compte root inclus.
 - (canguyen : Born2beroot! root : Helloworld2025 canguyen42 : Born2beroot)
+- Si trop complique -> note donc pas fou. 
 
 ## Groupes
 - [x] Un utilisateur sera présent avec pour nom votre login en plus de l’utilisateur root.
 - [x] Cet utilisateur appartiendra aux groupes user42 et sudo.
 
 ### Sudo
+- Droits administrateurs. 
 - [x] L’authentification en utilisant sudo sera limitée à 3 essais en cas de mot de passe erroné.
 - [x] Un message de votre choix s’affichera en cas d’erreur suite à un mauvais mot de passe lors de l’utilisation de sudo.
 - [x] Chaque action utilisant sudo sera archivée, aussi bien les inputs que les outputs.
@@ -56,7 +60,7 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 - [x] Les paths utilisables par sudo seront restreints, pour des questions de sécurité. Exemple : /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 
 ### script avec cron
-- Cron ou cron job est un utilitaire de ligne de commande pour planifier des commandes ou des scripts à des intervalles spécifiques ou à une heure précise chaque jour. Utile si vous souhaitez configurer votre serveur pour qu'il redémarre à une heure précise chaque jour.
+- Cron ou cron job est un utilitaire de ligne de commande pour planifier (=> automatiser) des commandes ou des scripts à des intervalles spécifiques ou à une heure précise chaque jour. Utile si vous souhaitez configurer votre serveur pour qu'il redémarre à une heure précise chaque jour.
 - [x] Dès le lancement de votre serveur, le script écrira des informations toutes les 10 minutes sur tous les terminaux (jetez un oeil du côté de wall). La bannière est facultative.
 - [x] L’architecture de votre système d’exploitation ainsi que sa version de kernel.
 - [x] Le nombre de processeurs physiques.
@@ -110,5 +114,5 @@ Secure Shell Host est un mécanisme d'authentification entre un client et un hô
 - [x] access my virtual machine (créer au minimum 2 partitions chiffrées en utilisant LVM)
 - [x] configure my virtual machine
 - [x] connect to SSH
-- [x] continue configurating my virtual machine
+- [x] continue configurating mcanguy virtual machine
 - [x] submission
