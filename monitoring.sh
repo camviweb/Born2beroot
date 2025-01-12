@@ -1,7 +1,7 @@
 #!/bin/bash
 
 archi=$(uname -a)
-cpup=$(nproc) 
+cpup=$(grep "physical id" /proc/cpuinfo | wc -l) 
 cpuv=$(cat /proc/cpuinfo | grep "^processor" | wc -l)
 ram_total=$(free -m | awk '$1 == "Mem:" {print $2}')
 ram_use=$(free -m | awk '$1 == "Mem:" {print $3}')
